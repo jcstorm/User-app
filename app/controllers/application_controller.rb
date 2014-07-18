@@ -8,4 +8,17 @@ class ApplicationController < ActionController::Base
   
   end
   
+  def new 
+  end
+  
+  def create
+    u = User.new
+    u.name = params['User Name']
+    u.image_url = params['Image URL']
+    u.description = params['Bio']
+    u.save
+    redirect_to "/users/#{u.id}"
+  end
+
+  
 end
