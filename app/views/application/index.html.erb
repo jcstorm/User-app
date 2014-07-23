@@ -1,0 +1,23 @@
+<div class = "container">
+<h1>Users</h1>
+  <div class="btn-group btn-group-lg">
+    <a href="/users/new_user">add new</a>
+  </div>
+  
+  
+<div>
+<ul class="list-group">
+  <% @users.each do |user| %>
+
+  <li class="list-group-item">
+    <img src="<%= user.image_url %>" width="50" height="50"> <%= user.name %>
+    <a href="/users/<%= user.id %>">show</a> | 
+    <a href="/users/<%= user.id %>/edit">edit</a> | 
+    <a href="/users/<%= user.id %>/destroy">destroy</a>
+  </li>
+
+  <% end %>
+  
+  </ul>
+  </div>
+</div>
